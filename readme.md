@@ -5,7 +5,8 @@
 
 ![screenshot](./screenshot.jpg)
 
-- Could display the welcome message, and Op could reload the config 
+- Could display the welcome message
+- Requires the welcome.* permission to reload the config
   
   - `/welcome` to display the welcome message
   - `/welcome reload` to reload the welcome message, (need op)
