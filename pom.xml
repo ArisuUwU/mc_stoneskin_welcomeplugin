@@ -6,7 +6,7 @@
 
   <groupId>mc.stoneskin.WelcomePlugin</groupId>
   <artifactId>welcome_plugin</artifactId>
-  <version>1.0.2</version>
+  <version>1.0.3</version>
 
   <name>MyWelcome</name>
   <!-- FIXME change it to the project's website -->
@@ -43,7 +43,7 @@
        <groupId>org.spigotmc</groupId>
        <artifactId>spigot-api</artifactId>
        <!-- <version>1.15.2-R0.1-SNAPSHOT</version> -->
-       <version>1.16.1-R0.1-SNAPSHOT</version>
+       <version>1.17.1-R0.1-SNAPSHOT</version>
        <scope>provided</scope>
     </dependency>
   </dependencies>

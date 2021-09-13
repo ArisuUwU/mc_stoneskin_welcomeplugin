@@ -1,10 +1,15 @@
 package mc.stoneskin.WelcomePlugin;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.bukkit.Bukkit;
+import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
 
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
@@ -13,10 +18,21 @@ public class MessageHelper {
 	// private File file;
 	private FileConfiguration config;
 	private Plugin plugin;
-
+        
 	public MessageHelper(final Plugin plugin) {
 		this.plugin = plugin;
-		config = plugin.getConfig();
+                File configFile = new File(this.plugin.getDataFolder(), "config.yml");
+                if (!configFile.exists()){
+                    plugin.saveResource("config.yml", false);
+                    return;
+                }
+		//config = plugin.getConfig(); if (Files.exists(this.plugin.getDataFolder() . "config.yml")){}
+               config = new YamlConfiguration();
+               try {
+                   config.load(configFile);
+               } catch (IOException | InvalidConfigurationException e) {
+                   e.printStackTrace();
+             }
 	}
 
 	public void Reload() {

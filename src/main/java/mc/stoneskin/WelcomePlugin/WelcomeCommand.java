@@ -25,7 +25,7 @@ public class WelcomeCommand implements CommandExecutor {
             Bukkit.getServer().getLogger().info("welcomeCommand:" + command.getName());
             if (command.getName().equalsIgnoreCase("Welcome")) {
                 if (args.length > 0 ) {
-                    if (player.isOp() && args[0].equalsIgnoreCase("reload")) {
+                    if (sender.hasPermission("welcome_plugin.*") && args[0].equalsIgnoreCase("reload")) {
                         _helper.Reload();
                         _helper.SendWelcomeMessages(player);
                     } else {
